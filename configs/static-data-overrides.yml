@@ -1,0 +1,13 @@
+overrides:
+  # 苦舎桓
+  - id: 323008
+    rawDescription: |
+      <color=#FFFFFFFF>行动阶段开始时：</color>$[K56]最多2张$[K3002]最高的手牌，每$[K56]1张，此牌就累积1点<color=#FFFFFFFF>「记忆和梦」</color>。（最多2点）\\n<color=#FFFFFFFF>我方角色使用技能时：</color>如果我方本回合未打出过行动牌，则消耗1点<color=#FFFFFFFF>「记忆和梦」</color>，以使此技能少花费1个元素骰。
+  # 兽肉薄荷卷
+  - id: 333008
+    rawDescription: |
+      目标角色在本回合结束前，<color=#FFFFFFFF>「普通攻击」</color>少花费1个$[K309]。\\n（每回合每个角色最多食用1次「{SPRITE_PRESET#3101}料理」）
+  # 迸发扫描
+  - id: 117082
+    rawDescription: |
+      <color=#FFFFFFFF>双方选择行动前：</color>如果我方场上存在$[C116]或$[C112082]，则使其$[K3]-1，并$[K56]我方牌库顶的1张卡牌。然后，造成所$[K56]卡牌[K3002]+1的$[K107]。\\n<color=#FFFFFFFF>$[K3]：1</color>（可叠加，最多叠加到3次）
