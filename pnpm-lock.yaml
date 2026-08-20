@@ -1,0 +1,211 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    devDependencies:
+      '@gi-tcg/gtsc':
+        specifier: ^0.7.6
+        version: 0.7.6(typescript@6.0.3)
+      '@types/node':
+        specifier: ^26.2.0
+        version: 26.2.0
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      yaml:
+        specifier: ^2.8.1
+        version: 2.9.0
+
+packages:
+
+  '@gi-tcg/gts-language-plugin@0.7.6':
+    resolution: {integrity: sha512-BVvCukws9dnDCMM/dUhmQM9JCL1681P8IxhQur5j3m6BbVTGgfIBImlo+XwNtpDyKt2embAjAAze7wiQddm6Yg==}
+    peerDependencies:
+      typescript: npm:@typescript/typescript6@^6.0.1
+
+  '@gi-tcg/gts-transpiler@0.7.6':
+    resolution: {integrity: sha512-Io/U7H0dnYudLD0yZ6EfrGD8rHxWK+3kECVI1BSRaa02HGfXlVzEzmH3mTD9dnWW7zVFRL///ShAfr1izAjzeQ==}
+
+  '@gi-tcg/gtsc@0.7.6':
+    resolution: {integrity: sha512-dv4evRWL3qoah4dYBjOQ/1vIv+wra2wanpQiSjdYUO94Kz/MUkA0BrNoJMZ68sxUw/u5DtD7fetCQBR9YzBviw==}
+    hasBin: true
+    peerDependencies:
+      typescript: npm:@typescript/typescript6@^6.0.1
+
+  '@jridgewell/sourcemap-codec@1.5.5':
+    resolution: {integrity: sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==}
+
+  '@sveltejs/acorn-typescript@1.0.13':
+    resolution: {integrity: sha512-wgKggnhZVL9Bfx1OaKKTrYY9BFRk6C8UAkQNUcIv1+llzYrIqy+RZm5HPKzn0NpEBvTVhTqB4kQyllZywsRBRQ==}
+    peerDependencies:
+      acorn: ^8.9.0
+
+  '@types/estree@1.0.9':
+    resolution: {integrity: sha512-GhdPgy1el4/ImP05X05Uw4cw2/M93BCUmnEvWZNStlCzEKME4Fkk+YpoA5OiHNQmoS7Cafb8Xa3Pya8m1Qrzeg==}
+
+  '@types/node@26.2.0':
+    resolution: {integrity: sha512-5IviulTZeRNp2vAJ514cc/HUlY5nZ9fCbq9DMyC52BrhFZACo3nI0R7qBxhQmo/d27NFe96ur/b7Wwxklda+kg==}
+
+  '@typescript-eslint/types@8.67.0':
+    resolution: {integrity: sha512-sBtgslww8nsMYUjhdPBiSyUqSzT8uR6g93A2QXnQC8+cGdjz0CyaOdqHDRJb1AtORbZCNUJBBeFA/tNR2uQmww==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@volar/language-core@2.4.28':
+    resolution: {integrity: sha512-w4qhIJ8ZSitgLAkVay6AbcnC7gP3glYM3fYwKV3srj8m494E3xtrCv6E+bWviiK/8hs6e6t1ij1s2Endql7vzQ==}
+
+  '@volar/source-map@2.4.28':
+    resolution: {integrity: sha512-yX2BDBqJkRXfKw8my8VarTyjv48QwxdJtvRgUpNE5erCsgEUdI2DsLbpa+rOQVAJYshY99szEcRDmyHbF10ggQ==}
+
+  '@volar/typescript@2.4.28':
+    resolution: {integrity: sha512-Ja6yvWrbis2QtN4ClAKreeUZPVYMARDYZl9LMEv1iQ1QdepB6wn0jTRxA9MftYmYa4DQ4k/DaSZpFPUfxl8giw==}
+
+  acorn@8.18.0:
+    resolution: {integrity: sha512-lGq+9yr1/GuAWaVYIHRjvvySG5/4VfKIvC8EWxStPdcDh/Ka7FG3twP6v4d5BkravUilhIAsG4Qj83t02LWUPQ==}
+    engines: {node: '>=0.4.0'}
+    hasBin: true
+
+  dedent@1.7.2:
+    resolution: {integrity: sha512-WzMx3mW98SN+zn3hgemf4OzdmyNhhhKz5Ay0pUfQiMQ3e1g+xmTJWp/pKdwKVXhdSkAEGIIzqeuWrL3mV/AXbA==}
+    peerDependencies:
+      babel-plugin-macros: ^3.1.0
+    peerDependenciesMeta:
+      babel-plugin-macros:
+        optional: true
+
+  espolar@0.6.5:
+    resolution: {integrity: sha512-2aLLfbxaAWmKguSYljKJBYQMqHU9UKrK9PIZo4WLgXC8SO69ZECEil/ZfkhQUpoFMi8mbE/xdGyIkudYqlbAqQ==}
+    engines: {node: '>= 26.0.0'}
+    peerDependencies:
+      '@types/estree': ^1.0.9
+    peerDependenciesMeta:
+      '@types/estree':
+        optional: true
+
+  esrap@2.2.1:
+    resolution: {integrity: sha512-GiYWG34AN/4CUyaWAgunGt0Rxvr1PTMlGC0vvEov/uOQYWne2bpN03Um+k8jT+q3op33mKouP2zeJ6OlM+qeUg==}
+
+  magic-string@0.30.21:
+    resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
+
+  path-browserify-esm@1.0.6:
+    resolution: {integrity: sha512-9nUwYvvu/yq1PYrUyYCihNWmpzacaRYF6gGbjLWErrZ4MRDWyfPN7RpE8E7tsw8eqBU/rr7mcoTXbS+Vih8uUA==}
+
+  path-browserify@1.0.1:
+    resolution: {integrity: sha512-b7uo2UCUOYZcnF/3ID0lulOJi/bafxa1xPe7ZPsammBSpjSWQkjNxlt635YGS2MiR9GjvuXCtz2emr3jbsz98g==}
+
+  typescript@6.0.3:
+    resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
+  undici-types@8.3.0:
+    resolution: {integrity: sha512-j375ScV60dom+YkPFIfTLcOiPxkN/buHz5GobjLhixFuANaNs3C9l4GmrWqejgXWJ7BbJcFYpTEUkS1Ge8bpZQ==}
+
+  vscode-uri@3.1.0:
+    resolution: {integrity: sha512-/BpdSx+yCQGnCvecbyXdxHDkuk55/G3xwnC0GqY4gmQ3j+A+g8kzzgB4Nk/SINjqn6+waqw3EgbVF2QKExkRxQ==}
+
+  yaml@2.9.0:
+    resolution: {integrity: sha512-2AvhNX3mb8zd6Zy7INTtSpl1F15HW6Wnqj0srWlkKLcpYl/gMIMJiyuGq2KeI2YFxUPjdlB+3Lc10seMLtL4cA==}
+    engines: {node: '>= 14.6'}
+    hasBin: true
+
+  zimmerframe@1.1.4:
+    resolution: {integrity: sha512-B58NGBEoc8Y9MWWCQGl/gq9xBCe4IiKM0a2x7GZdQKOW5Exr8S1W24J6OgM1njK8xCRGvAJIL/MxXHf6SkmQKQ==}
+
+snapshots:
+
+  '@gi-tcg/gts-language-plugin@0.7.6(typescript@6.0.3)':
+    dependencies:
+      '@gi-tcg/gts-transpiler': 0.7.6
+      '@volar/language-core': 2.4.28
+      '@volar/typescript': 2.4.28
+      typescript: 6.0.3
+      vscode-uri: 3.1.0
+    transitivePeerDependencies:
+      - babel-plugin-macros
+
+  '@gi-tcg/gts-transpiler@0.7.6':
+    dependencies:
+      '@sveltejs/acorn-typescript': 1.0.13(acorn@8.18.0)
+      '@types/estree': 1.0.9
+      acorn: 8.18.0
+      dedent: 1.7.2
+      espolar: 0.6.5(@types/estree@1.0.9)
+      esrap: 2.2.1
+      magic-string: 0.30.21
+      path-browserify-esm: 1.0.6
+      zimmerframe: 1.1.4
+    transitivePeerDependencies:
+      - babel-plugin-macros
+
+  '@gi-tcg/gtsc@0.7.6(typescript@6.0.3)':
+    dependencies:
+      '@gi-tcg/gts-language-plugin': 0.7.6(typescript@6.0.3)
+      '@volar/typescript': 2.4.28
+      typescript: 6.0.3
+    transitivePeerDependencies:
+      - babel-plugin-macros
+
+  '@jridgewell/sourcemap-codec@1.5.5': {}
+
+  '@sveltejs/acorn-typescript@1.0.13(acorn@8.18.0)':
+    dependencies:
+      acorn: 8.18.0
+
+  '@types/estree@1.0.9': {}
+
+  '@types/node@26.2.0':
+    dependencies:
+      undici-types: 8.3.0
+
+  '@typescript-eslint/types@8.67.0': {}
+
+  '@volar/language-core@2.4.28':
+    dependencies:
+      '@volar/source-map': 2.4.28
+
+  '@volar/source-map@2.4.28': {}
+
+  '@volar/typescript@2.4.28':
+    dependencies:
+      '@volar/language-core': 2.4.28
+      path-browserify: 1.0.1
+      vscode-uri: 3.1.0
+
+  acorn@8.18.0: {}
+
+  dedent@1.7.2: {}
+
+  espolar@0.6.5(@types/estree@1.0.9):
+    dependencies:
+      '@typescript-eslint/types': 8.67.0
+      '@volar/source-map': 2.4.28
+    optionalDependencies:
+      '@types/estree': 1.0.9
+
+  esrap@2.2.1:
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.5.5
+
+  magic-string@0.30.21:
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.5.5
+
+  path-browserify-esm@1.0.6: {}
+
+  path-browserify@1.0.1: {}
+
+  typescript@6.0.3: {}
+
+  undici-types@8.3.0: {}
+
+  vscode-uri@3.1.0: {}
+
+  yaml@2.9.0: {}
+
+  zimmerframe@1.1.4: {}

@@ -1,0 +1,27 @@
+{
+  "name": "lianyu-s1-data-config",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=26.1.0"
+  },
+  "packageManager": "pnpm@11.17.0",
+  "scripts": {
+    "build": "node scripts/build-config.ts",
+    "check": "pnpm run check:gts && pnpm run check:config",
+    "check:gts": "gtsc --noEmit",
+    "check:config": "tsc -p tsconfig.node.json --noEmit",
+    "setup": "pnpm --dir genius-invokation install && pnpm --dir genius-invokation build custom-data-loader..."
+  },
+  "devDependencies": {
+    "@gi-tcg/gtsc": "^0.7.6",
+    "@types/node": "^26.2.0",
+    "typescript": "~6.0.3",
+    "yaml": "^2.8.1"
+  },
+  "gamingTs": {
+    "providerImportSource": "@gi-tcg/custom-data-loader/gts",
+    "runtimeImportSource": "@gi-tcg/custom-data-loader/gts/runtime"
+  }
+}
