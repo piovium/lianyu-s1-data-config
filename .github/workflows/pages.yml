@@ -40,7 +40,7 @@ jobs:
         run: pnpm setup
 
       - name: Check and build config
-        run: pnpm check
+        run: pnpm check && pnpm build
 
       - name: Set up Pages
         uses: actions/configure-pages@v6
