@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      tiny-jsonc:
+        specifier: ^1.0.2
+        version: 1.0.2
     devDependencies:
       '@gi-tcg/gtsc':
         specifier: ^0.7.6
@@ -113,6 +117,9 @@ packages:
     resolution: {integrity: sha512-OpN0zzVdiaiAhxpuuj5efpIS4sY9j7bY6uR5mnj5yPzGkdkjNKSJeUThPb60Jw29QuAZgA4o+/iB49kFiaBX6g==}
     engines: {node: '>=14'}
     hasBin: true
+
+  tiny-jsonc@1.0.2:
+    resolution: {integrity: sha512-f5QDAfLq6zIVSyCZQZhhyl0QS6MvAyTxgz4X4x3+EoCktNWEYJ6PeoEA97fyb98njpBNNi88ybpD7m+BDFXaCw==}
 
   typescript@6.0.3:
     resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
@@ -224,6 +231,8 @@ snapshots:
   path-browserify@1.0.1: {}
 
   prettier@3.9.6: {}
+
+  tiny-jsonc@1.0.2: {}
 
   typescript@6.0.3: {}
 

@@ -22,7 +22,7 @@ pnpm setup
 数据来源：
 
 - `configs/static-data-overrides.yml`：输出的 `overrides`
-- `configs/gi-tcg-version-selection.json`：输出的 `versions`
+- `configs/gi-tcg-version-selection.jsonc`：输出的 `versions`
 - `src/mod.gts`：输出的 `mods[0]`
 
 修改后可运行：
@@ -40,7 +40,7 @@ pnpm build
 
 ## 原始融合spec by @CherryC9H13N
 
-> 部分“融合版”可使用 version selection 方式指定的，已在 [JSON](./configs/gi-tcg-version-selection.json) 中指定；剩余卡牌在 [mod](./src/mod.gts) 中写出。仅描述改动在 [YML](./configs/static-data-overrides.yml) 中。
+> 部分“融合版”可使用 version selection 方式指定的，已在 [JSONC](./configs/gi-tcg-version-selection.jsonc) 中指定；剩余卡牌在 [mod](./src/mod.gts) 中写出。仅描述改动在 [YML](./configs/static-data-overrides.yml) 中。
 
 - 卡齐娜5.6（数据依赖缺东西没把这个版本分出来）
 - 阿佩普的绿洲守望者5.0（static-data缺伤害类型，需要补一下）

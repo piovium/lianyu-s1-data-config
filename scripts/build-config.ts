@@ -1,13 +1,14 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { join } from "node:path";
+import JSONC from "tiny-jsonc";
 
 import { parse, stringify } from "yaml";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const inputPaths = {
   overrides: join(root, "configs", "static-data-overrides.yml"),
-  versions: join(root, "configs", "gi-tcg-version-selection.json"),
+  versions: join(root, "configs", "gi-tcg-version-selection.jsonc"),
   mod: join(root, "src", "mod.gts"),
 };
 
@@ -18,7 +19,7 @@ const [overridesSource, versionsSource, mod] = await Promise.all([
 ]);
 
 const overridesConfig = parse(overridesSource);
-const versions = JSON.parse(versionsSource);
+const versions = JSONC.parse(versionsSource);
 
 
 if (!mod.trim()) {
