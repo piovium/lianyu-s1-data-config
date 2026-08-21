@@ -1,4 +1,27 @@
-import { $, DamageType, DiceType } from "@gi-tcg/core/data";
+import { $, DamageType, DiceType, type SkillHandle, type StatusHandle } from "@gi-tcg/core/data";
+
+const [
+  LiutianArchery,
+  TrailOfTheQilin,
+  FrostflakeArrow,
+  CelestialShower,
+] = [
+  11011, 11012, 11013, 11014
+] as SkillHandle[];
+
+/**
+ * @id 1101
+ * @name 甘雨
+ * @description
+ * 「既然是明早前要，那这份通稿，只要熬夜写完就好。」
+ */
+define character {
+  id 1101 as Ganyu;
+  tags cryo, bow, liyue;
+  health 12;
+  energy 2;
+  skills LiutianArchery, TrailOfTheQilin, FrostflakeArrow, CelestialShower;
+};
 
 /**
  * @id 311309
@@ -132,4 +155,23 @@ define card {
       :e.deductOmniCost(1);
     };
   };
+};
+
+const MachineAssemblyLineInEffect = 303228 as StatusHandle;
+
+/**
+ * @id 332028
+ * @name 机关铸成之链
+ * @description
+ * 对目标我方角色造成1点物理伤害，并从牌组中随机抽取1张「圣遗物」牌。该角色每次受到伤害或治疗后：累积1点「备战度」（最多累积2点）。
+ * 我方打出原本费用不多于「备战度」的「武器」或「圣遗物」时：移除所有「备战度」，以免费打出该牌。
+ */
+define card {
+  id 332028 as MachineAssemblyLine;
+  description "对目标我方角色造成1点$[K100]，并牌组中随机抽取1张「{SPRITE_PRESET#3004}圣遗物」牌。<color=#FFFFFFFF>该角色每次受到伤害或治疗后：</color>累积1点<color=#FFFFFFFF>「备战度」</color>（最多累积2点）。\\n<color=#FFFFFFFF>我方打出原本费用不多于<color=#FFFFFFFF>「备战度」</color>的「{SPRITE_PRESET#3003}武器」或「{SPRITE_PRESET#3004}圣遗物」时：</color>移除所有<color=#FFFFFFFF>「备战度」</color>，以免费打出该牌。"
+  cost DiceType.Aligned, 1;
+  addTarget $.my.character;
+  :damage(DamageType.Physical, 1, :e.targets[0]);
+  :drawCards(1, { withTag: "artifact" });
+  :characterStatus(MachineAssemblyLineInEffect, :e.targets[0]);
 };
