@@ -16,7 +16,9 @@
   },
   "devDependencies": {
     "@gi-tcg/gtsc": "^0.7.6",
+    "@gi-tcg/prettier-plugin-gts": "^0.7.6",
     "@types/node": "^26.2.0",
+    "prettier": "^3.9.6",
     "typescript": "~6.0.3",
     "yaml": "^2.8.1"
   },

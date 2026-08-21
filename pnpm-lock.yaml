@@ -11,9 +11,15 @@ importers:
       '@gi-tcg/gtsc':
         specifier: ^0.7.6
         version: 0.7.6(typescript@6.0.3)
+      '@gi-tcg/prettier-plugin-gts':
+        specifier: ^0.7.6
+        version: 0.7.6(prettier@3.9.6)
       '@types/node':
         specifier: ^26.2.0
         version: 26.2.0
+      prettier:
+        specifier: ^3.9.6
+        version: 3.9.6
       typescript:
         specifier: ~6.0.3
         version: 6.0.3
@@ -36,6 +42,11 @@ packages:
     hasBin: true
     peerDependencies:
       typescript: npm:@typescript/typescript6@^6.0.1
+
+  '@gi-tcg/prettier-plugin-gts@0.7.6':
+    resolution: {integrity: sha512-lta04KIa75hB1H8k5/zTd86DQTbHr3vZDV3SwHxXHdm08kbffMOnF4pt8YWod5Ii6U5fBsBLTStBMVqfkz0xOA==}
+    peerDependencies:
+      prettier: ^3.0.0
 
   '@jridgewell/sourcemap-codec@1.5.5':
     resolution: {integrity: sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==}
@@ -98,6 +109,11 @@ packages:
   path-browserify@1.0.1:
     resolution: {integrity: sha512-b7uo2UCUOYZcnF/3ID0lulOJi/bafxa1xPe7ZPsammBSpjSWQkjNxlt635YGS2MiR9GjvuXCtz2emr3jbsz98g==}
 
+  prettier@3.9.6:
+    resolution: {integrity: sha512-OpN0zzVdiaiAhxpuuj5efpIS4sY9j7bY6uR5mnj5yPzGkdkjNKSJeUThPb60Jw29QuAZgA4o+/iB49kFiaBX6g==}
+    engines: {node: '>=14'}
+    hasBin: true
+
   typescript@6.0.3:
     resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
     engines: {node: '>=14.17'}
@@ -151,6 +167,13 @@ snapshots:
     transitivePeerDependencies:
       - babel-plugin-macros
 
+  '@gi-tcg/prettier-plugin-gts@0.7.6(prettier@3.9.6)':
+    dependencies:
+      '@gi-tcg/gts-transpiler': 0.7.6
+      prettier: 3.9.6
+    transitivePeerDependencies:
+      - babel-plugin-macros
+
   '@jridgewell/sourcemap-codec@1.5.5': {}
 
   '@sveltejs/acorn-typescript@1.0.13(acorn@8.18.0)':
@@ -199,6 +222,8 @@ snapshots:
   path-browserify-esm@1.0.6: {}
 
   path-browserify@1.0.1: {}
+
+  prettier@3.9.6: {}
 
   typescript@6.0.3: {}
 

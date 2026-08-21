@@ -37,3 +37,7 @@ pnpm build
 ## 发布
 
 推送到 `main` 后，GitHub Actions 会重新安装依赖、生成 GTS 声明、执行检查并将 `dist/` 部署到 GitHub Pages。仓库首次启用时，需要在 GitHub 的 Pages 设置中将 Source 设为 **GitHub Actions**。
+
+## 原始融合spec
+
+> 部分“融合版”可使用 version selection 方式指定的，已在 [JSON](./configs/gi-tcg-version-selection.json) 中指定；剩余卡牌在 [mod](./src/mod.gts) 中写出。仅描述改动在 [YML](./configs/static-data-overrides.yml) 中。
