@@ -1,4 +1,3 @@
-// CustomDataLoader 示例；可直接在此基础上编写赛事模组。
 import { $, DamageType, DiceType } from "@gi-tcg/core/data";
 
 /**
