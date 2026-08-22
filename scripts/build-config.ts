@@ -1,6 +1,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { join } from "node:path";
+import pkgJson from "../package.json" with { type: "json" };
 import JSONC from "tiny-jsonc";
 
 import { parse, stringify } from "yaml";
@@ -27,6 +28,7 @@ if (!mod.trim()) {
 }
 
 const config = {
+  version: pkgJson.version,
   overrides: overridesConfig.overrides,
   versions,
   mods: [mod],
