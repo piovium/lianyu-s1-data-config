@@ -36,7 +36,6 @@ const [FireworkFlareup, NiwabiFiredance, RyuukinSaxifrage] = [
  */
 define character {
   id 1305 as Yoimiya;
-  since "v3.3.0";
   tags pyro, bow, inazuma;
   health 10;
   energy 2;
