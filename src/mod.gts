@@ -1,12 +1,13 @@
-import { $, DamageType, DiceType, type SkillHandle, type StatusHandle } from "@gi-tcg/core/data";
+import {
+  $,
+  DamageType,
+  DiceType,
+  type SkillHandle,
+  type StatusHandle,
+} from "@gi-tcg/core/data";
 
-const [
-  LiutianArchery,
-  TrailOfTheQilin,
-  FrostflakeArrow,
-  CelestialShower,
-] = [
-  11011, 11012, 11013, 11014
+const [LiutianArchery, TrailOfTheQilin, FrostflakeArrow, CelestialShower] = [
+  11011, 11012, 11013, 11014,
 ] as SkillHandle[];
 
 /**
@@ -21,6 +22,25 @@ define character {
   health 12;
   energy 2;
   skills LiutianArchery, TrailOfTheQilin, FrostflakeArrow, CelestialShower;
+};
+
+const [FireworkFlareup, NiwabiFiredance, RyuukinSaxifrage] = [
+  13051, 13052, 13053,
+] as SkillHandle[];
+
+/**
+ * @id 1305
+ * @name 宵宫
+ * @description
+ * 花见坂第十一届全街邀请赛「长野原队」队长兼首发牌手。
+ */
+define character {
+  id 1305 as Yoimiya;
+  since "v3.3.0";
+  tags pyro, bow, inazuma;
+  health 10;
+  energy 2;
+  skills FireworkFlareup, NiwabiFiredance, RyuukinSaxifrage;
 };
 
 /**
@@ -168,7 +188,7 @@ const MachineAssemblyLineInEffect = 303228 as StatusHandle;
  */
 define card {
   id 332028 as MachineAssemblyLine;
-  description "对目标我方角色造成1点$[K100]，并牌组中随机抽取1张「{SPRITE_PRESET#3004}圣遗物」牌。<color=#FFFFFFFF>该角色每次受到伤害或治疗后：</color>累积1点<color=#FFFFFFFF>「备战度」</color>（最多累积2点）。\\n<color=#FFFFFFFF>我方打出原本费用不多于<color=#FFFFFFFF>「备战度」</color>的「{SPRITE_PRESET#3003}武器」或「{SPRITE_PRESET#3004}圣遗物」时：</color>移除所有<color=#FFFFFFFF>「备战度」</color>，以免费打出该牌。"
+  description "对目标我方角色造成1点$[K100]，并牌组中随机抽取1张「{SPRITE_PRESET#3004}圣遗物」牌。<color=#FFFFFFFF>该角色每次受到伤害或治疗后：</color>累积1点<color=#FFFFFFFF>「备战度」</color>（最多累积2点）。\\n<color=#FFFFFFFF>我方打出原本费用不多于<color=#FFFFFFFF>「备战度」</color>的「{SPRITE_PRESET#3003}武器」或「{SPRITE_PRESET#3004}圣遗物」时：</color>移除所有<color=#FFFFFFFF>「备战度」</color>，以免费打出该牌。";
   cost DiceType.Aligned, 1;
   addTarget $.my.character;
   :damage(DamageType.Physical, 1, :e.targets[0]);

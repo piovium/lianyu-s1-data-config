@@ -2,6 +2,9 @@ overrides:
   # 甘雨充能
   - id: 1101
     maxEnergy: 2
+  # 宵宫充能
+  - id: 1305
+    maxEnergy: 2
   # 苦舎桓
   - id: 323008
     rawDescription: |
