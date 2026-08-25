@@ -3,8 +3,8 @@ import { fileURLToPath } from "node:url";
 import { join } from "node:path";
 import pkgJson from "../package.json" with { type: "json" };
 import JSONC from "tiny-jsonc";
-
 import { parse, stringify } from "yaml";
+import { createOfficialVersionResolver } from "@gi-tcg/core";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const inputPaths = {
@@ -28,6 +28,8 @@ for (const [key, value] of Object.entries(versions)) {
   }
 }
 
+createOfficialVersionResolver(void 0, versions);
+
 if (!mod.trim()) {
   throw new TypeError(`${inputPaths.mod} must not be empty`);
 }
@@ -49,4 +51,4 @@ await Promise.all([
   writeFile(join(outputDirectory, "config.yml"), stringify(config)),
 ]);
 
-console.log("Generated dist/config.json and dist/config.yml");
+console?.log?.("Generated dist/config.json and dist/config.yml");

@@ -15,6 +15,7 @@
     "setup": "pnpm --dir genius-invokation install && pnpm --dir genius-invokation build custom-data-loader..."
   },
   "devDependencies": {
+    "@gi-tcg/core": "^0.20.8",
     "@gi-tcg/gtsc": "^0.7.6",
     "@gi-tcg/prettier-plugin-gts": "^0.7.6",
     "@types/node": "^26.2.0",

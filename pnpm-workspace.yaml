@@ -1,0 +1,4 @@
+minimumReleaseAgeExclude:
+  - '@gi-tcg/core@0.20.8'
+  - '@gi-tcg/typings@0.20.8'
+  - '@gi-tcg/utils@0.20.8'
