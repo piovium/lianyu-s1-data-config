@@ -22,6 +22,11 @@ const [overridesSource, versionsSource, mod] = await Promise.all([
 const overridesConfig = parse(overridesSource);
 const versions = JSONC.parse(versionsSource);
 
+for (const [key, value] of Object.entries(versions)) {
+  if (key.length === 4) {
+    versions[`2${key}1`] ??= value;
+  }
+}
 
 if (!mod.trim()) {
   throw new TypeError(`${inputPaths.mod} must not be empty`);
