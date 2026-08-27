@@ -31,3 +31,51 @@ overrides:
     rawPlayingDescription: |
       装备有此牌的$[A1104]生成的<color=#FFFFFFFF>$[C111041]</color>获得以下效果：
       初始$[K4]+1，并且使我方单手剑、双手剑或长柄武器角色的<color=#FFFFFFFF>普通攻击</color>伤害+1。
+  # 雷元素伤害
+  - id: -104
+    rawDescription: |
+      附着{SPRITE_PRESET#2104}雷元素，可发生元素反应：
+      {SPRITE_PRESET#2104}{SPRITE_PRESET#2103}<color=#FFFFFFFF>超载</color>：本伤害+2，目标强制切换到下一个角色
+      {SPRITE_PRESET#2104}{SPRITE_PRESET#2101}<color=#FFFFFFFF>超导</color>：本伤害+1，对目标以外的所有敌方角色造成1点穿透伤害
+      {SPRITE_PRESET#2104}{SPRITE_PRESET#2102}<color=#FFFFFFFF>感电</color>：本伤害+1，对目标以外的所有敌方角色造成1点穿透伤害
+      {SPRITE_PRESET#2104}{SPRITE_PRESET#2107}<color=#FFFFFFFF>原激化</color>：本伤害+1，生成使下3次草元素或雷元素伤害+1的[<color=#FFFFFFFF>激化领域</color>]
+      {SPRITE_PRESET#2104}{SPRITE_PRESET#2102}<color=#FFFFFFFF>月感电</color>：生成回合结束时造成2点{SPRITE_PRESET#2104}<color=#FFACFFFF>雷元素伤害</color>的[<color=#FFFFFFFF>雷暴云</color>]。（可用次数1，可叠加，没有上限，入场或可用次数增加时，赋予敌方随机1张手牌[<color=#FFFFFFFF>电击</color>]）
+  # 草元素伤害
+  - id: -107
+    rawDescription: |
+      附着{SPRITE_PRESET#2107}草元素，可发生元素反应：
+      {SPRITE_PRESET#2107}{SPRITE_PRESET#2102}<color=#FFFFFFFF>绽放</color>：本伤害+1，生成使下次火元素或雷元素伤害+2的[<color=#FFFFFFFF>草原核</color>]
+      {SPRITE_PRESET#2107}{SPRITE_PRESET#2103}<color=#FFFFFFFF>燃烧</color>：本伤害+1，生成回合结束时造成1点火元素伤害的[<color=#FFFFFFFF>燃烧烈焰</color>]（可用次数1，最多叠加到2）
+      {SPRITE_PRESET#2107}{SPRITE_PRESET#2104}<color=#FFFFFFFF>原激化</color>：本伤害+1，生成使下3次草元素或雷元素伤害+1的[<color=#FFFFFFFF>激化领域</color>]。
+      {SPRITE_PRESET#2107}{SPRITE_PRESET#2102}<color=#FFFFFFFF>月绽放</color>：本伤害+1，并赋予我方随机1张手牌[<color=#FFFFFFFF>费用降低</color>]
+  # 附着雷元素
+  - id: -204
+    rawDescription: |
+      不通过伤害附着{SPRITE_PRESET#2104}雷元素时，发生的元素反应会忽略伤害效果：
+      {SPRITE_PRESET#2104}{SPRITE_PRESET#2103}<color=#FFFFFFFF>超载</color>：目标强制切换到下一个角色
+      {SPRITE_PRESET#2104}{SPRITE_PRESET#2101}<color=#FFFFFFFF>超导</color>：没有效果
+      {SPRITE_PRESET#2104}{SPRITE_PRESET#2102}<color=#FFFFFFFF>感电</color>：没有效果
+      {SPRITE_PRESET#2104}{SPRITE_PRESET#2107}<color=#FFFFFFFF>原激化</color>：生成使下3次草元素或雷元素伤害+1的[<color=#FFFFFFFF>激化领域</color>]
+  # 附着草元素
+  - id: -207
+    rawDescription: |
+      不通过伤害附着{SPRITE_PRESET#2107}草元素时，发生的元素反应会忽略伤害效果：
+      {SPRITE_PRESET#2107}{SPRITE_PRESET#2102}<color=#FFFFFFFF>绽放</color>：生成使下次火元素或雷元素伤害+2的[<color=#FFFFFFFF>草原核</color>]
+      {SPRITE_PRESET#2107}{SPRITE_PRESET#2103}<color=#FFFFFFFF>燃烧</color>：生成回合结束时造成1点火元素伤害的[<color=#FFFFFFFF>燃烧烈焰</color>]（可用次数1，最多叠加到2）
+      {SPRITE_PRESET#2107}{SPRITE_PRESET#2104}<color=#FFFFFFFF>原激化</color>：生成使下3次草元素或雷元素伤害+1的[<color=#FFFFFFFF>激化领域</color>]
+  # 雷元素相关反应
+  - id: -214
+    rawDescription: |
+      {SPRITE_PRESET#2104}{SPRITE_PRESET#2103}<color=#FFFFFFFF>超载</color>：本伤害+2，目标强制切换到下一个角色
+      {SPRITE_PRESET#2104}{SPRITE_PRESET#2101}<color=#FFFFFFFF>超导</color>：本伤害+1，对目标以外的所有敌方角色造成1点穿透伤害
+      {SPRITE_PRESET#2104}{SPRITE_PRESET#2102}<color=#FFFFFFFF>感电</color>：本伤害+1，对目标以外的所有敌方角色造成1点穿透伤害
+      {SPRITE_PRESET#2104}{SPRITE_PRESET#2107}<color=#FFFFFFFF>原激化</color>：本伤害+1，生成使下3次草元素或雷元素伤害+1的[<color=#FFFFFFFF>激化领域</color>]
+      {SPRITE_PRESET#2106}{SPRITE_PRESET#2104}<color=#FFFFFFFF>结晶（雷）</color>：本伤害+1，我方出战角色获得1点护盾（可叠加，最多2点）。
+      {SPRITE_PRESET#2105}{SPRITE_PRESET#2104}<color=#FFFFFFFF>扩散（雷）</color>：对目标以外的所有敌方角色造成1点雷元素伤害\\n{SPRITE_PRESET#2104}{SPRITE_PRESET#2102}<color=#FFFFFFFF>月感电</color>：生成回合结束时造成2点{SPRITE_PRESET#2104}<color=#FFACFFFF>雷元素伤害</color>的[<color=#FFFFFFFF>雷暴云</color>]。（可用次数1，可叠加，没有上限，入场或可用次数增加时，赋予敌方随机1张手牌[<color=#FFFFFFFF>电击</color>]）
+  # 草元素相关反应
+  - id: -217
+    rawDescription: |
+      {SPRITE_PRESET#2107}{SPRITE_PRESET#2102}<color=#FFFFFFFF>绽放</color>：本伤害+1，生成使下次火元素或雷元素伤害+2的[<color=#FFFFFFFF>草原核</color>]
+      {SPRITE_PRESET#2107}{SPRITE_PRESET#2103}<color=#FFFFFFFF>燃烧</color>：本伤害+1，生成回合结束时造成1点火元素伤害的[<color=#FFFFFFFF>燃烧烈焰</color>]（可用次数1，最多叠加到2）
+      {SPRITE_PRESET#2107}{SPRITE_PRESET#2104}<color=#FFFFFFFF>原激化</color>：本伤害+1，生成使下3次草元素或雷元素伤害+1的[<color=#FFFFFFFF>激化领域</color>]
+      {SPRITE_PRESET#2107}{SPRITE_PRESET#2102}<color=#FFFFFFFF>月绽放</color>：本伤害+1，并赋予我方随机1张手牌[<color=#FFFFFFFF>费用降低</color>]
