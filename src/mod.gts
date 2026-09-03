@@ -6,6 +6,7 @@ import {
   type StatusHandle,
   type SummonHandle,
   type EquipmentHandle,
+  type ExtensionHandle,
 } from "@gi-tcg/core/data";
 
 const [LiutianArchery, TrailOfTheQilin, FrostflakeArrow, CelestialShower] = [
@@ -216,4 +217,47 @@ define skill {
   if (:self.hasEquipment(TranscendentAutomaton)) {
     :switchActive($.my.prev);
   }
+};
+
+const DisposedSupportCountExtension = 322022 as ExtensionHandle<{
+  disposedSupportCount: [number, number];
+}>;
+
+/**
+ * @id 322022
+ * @name 婕德
+ * @description
+ * 此牌会记录本场对局中我方支援区弃置卡牌的数量，称为「阅历」。（最多6点）
+ * 我方角色使用「元素爆发」后：如果「阅历」至少为5，则弃置此牌，生成「阅历」-2数量的万能元素。
+ */
+define card {
+  id 322022 as Jeht;
+  cost DiceType.Void, 2;
+  associateExtension DisposedSupportCountExtension;
+  replaceDescription "[GCG_TOKEN_COUNTER]",
+    ((_, { area }, ext) => ext.disposedSupportCount[area.who]);
+  support ally {
+    variable experience, 0;
+    on staged {
+      :setVariable(
+        "experience",
+        Math.min(:getExtensionState().disposedSupportCount[:self.who], 6),
+      );
+    };
+    on entityDispose {
+      when :( :e.entity.definition.type === "support" );
+      :setVariable(
+        "experience",
+        Math.min(:getExtensionState().disposedSupportCount[:self.who], 6),
+      );
+    };
+    on useSkill {
+      when :( :e.isSkillType("burst") );
+      const exp = :getVariable("experience");
+      if (exp >= 5) {
+        :generateDice(DiceType.Omni, exp - 2);
+        :dispose();
+      }
+    };
+  };
 };
