@@ -5,6 +5,14 @@ overrides:
   # 宵宫充能
   - id: 1305
     maxEnergy: 2
+  # 魔偶剑鬼霜驰影突费用
+  - id: 25013
+    playCost: [{ "type": "GCG_COST_DICE_ANEMO", "count": 3 }]
+  # 婕德
+  - id: 322022
+    rawDynamicDescription: |
+      此牌会记录本场对局中我方支援区弃置卡牌的数量，称为「阅历」。（最多6点，<color=#D3BC8EFF>当前为${[GCG_TOKEN_COUNTER]}点</color>）
+      <color=#FFFFFFFF>我方角色使用「元素爆发」后：</color>如果「阅历」至少为5，则弃置此牌，生成<color=#FFFFFFFF>「阅历」-2</color>数量的$[K411]。
   # 苦舎桓
   - id: 323008
     rawDescription: |

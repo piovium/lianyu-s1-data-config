@@ -4,6 +4,9 @@ import {
   DiceType,
   type SkillHandle,
   type StatusHandle,
+  type SummonHandle,
+  type EquipmentHandle,
+  type ExtensionHandle,
 } from "@gi-tcg/core/data";
 
 const [LiutianArchery, TrailOfTheQilin, FrostflakeArrow, CelestialShower] = [
@@ -193,4 +196,68 @@ define card {
   :damage(DamageType.Physical, 1, :e.targets[0]);
   :drawCards(1, { withTag: "artifact" });
   :characterStatus(MachineAssemblyLineInEffect, :e.targets[0]);
+};
+
+const ShadowswordGallopingFrost = 125012 as SummonHandle;
+const TranscendentAutomaton = 225011 as EquipmentHandle;
+
+/**
+ * @id 25013
+ * @name 霜驰影突
+ * @description
+ * 造成1点冰元素伤害，召唤剑影·霜驰。
+ */
+define skill {
+  id 25013 as FrostyAssault;
+  description "造成$[D__KEY__DAMAGE]点$[D__KEY__ELEMENT]，召唤<color=#FFFFFFFF>$[C125012]</color>。";
+  skillType elemental;
+  cost DiceType.Anemo, 3;
+  :damage(DamageType.Cryo, 1);
+  :summon(ShadowswordGallopingFrost);
+  if (:self.hasEquipment(TranscendentAutomaton)) {
+    :switchActive($.my.prev);
+  }
+};
+
+const DisposedSupportCountExtension = 322022 as ExtensionHandle<{
+  disposedSupportCount: [number, number];
+}>;
+
+/**
+ * @id 322022
+ * @name 婕德
+ * @description
+ * 此牌会记录本场对局中我方支援区弃置卡牌的数量，称为「阅历」。（最多6点）
+ * 我方角色使用「元素爆发」后：如果「阅历」至少为5，则弃置此牌，生成「阅历」-2数量的万能元素。
+ */
+define card {
+  id 322022 as Jeht;
+  cost DiceType.Void, 2;
+  associateExtension DisposedSupportCountExtension;
+  replaceDescription "[GCG_TOKEN_COUNTER]",
+    ((_, { area }, ext) => ext.disposedSupportCount[area.who]);
+  support ally {
+    variable experience, 0;
+    on staged {
+      :setVariable(
+        "experience",
+        Math.min(:getExtensionState().disposedSupportCount[:self.who], 6),
+      );
+    };
+    on entityDispose {
+      when :( :e.entity.definition.type === "support" );
+      :setVariable(
+        "experience",
+        Math.min(:getExtensionState().disposedSupportCount[:self.who], 6),
+      );
+    };
+    on useSkill {
+      when :( :e.isSkillType("burst") );
+      const exp = :getVariable("experience");
+      if (exp >= 5) {
+        :generateDice(DiceType.Omni, exp - 2);
+        :dispose();
+      }
+    };
+  };
 };
