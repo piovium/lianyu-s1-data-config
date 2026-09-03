@@ -4,6 +4,8 @@ import {
   DiceType,
   type SkillHandle,
   type StatusHandle,
+  type SummonHandle,
+  type EquipmentHandle,
 } from "@gi-tcg/core/data";
 
 const [LiutianArchery, TrailOfTheQilin, FrostflakeArrow, CelestialShower] = [
@@ -193,4 +195,25 @@ define card {
   :damage(DamageType.Physical, 1, :e.targets[0]);
   :drawCards(1, { withTag: "artifact" });
   :characterStatus(MachineAssemblyLineInEffect, :e.targets[0]);
+};
+
+const ShadowswordGallopingFrost = 125012 as SummonHandle;
+const TranscendentAutomaton = 225011 as EquipmentHandle;
+
+/**
+ * @id 25013
+ * @name 霜驰影突
+ * @description
+ * 造成1点冰元素伤害，召唤剑影·霜驰。
+ */
+define skill {
+  id 25013 as FrostyAssault;
+  description "造成$[D__KEY__DAMAGE]点$[D__KEY__ELEMENT]，召唤<color=#FFFFFFFF>$[C125012]</color>。";
+  skillType elemental;
+  cost DiceType.Anemo, 3;
+  :damage(DamageType.Cryo, 1);
+  :summon(ShadowswordGallopingFrost);
+  if (:self.hasEquipment(TranscendentAutomaton)) {
+    :switchActive($.my.prev);
+  }
 };

@@ -5,6 +5,9 @@ overrides:
   # 宵宫充能
   - id: 1305
     maxEnergy: 2
+  # 魔偶剑鬼霜驰影突费用
+  - id: 25013
+    playCost: [{ "type": "GCG_COST_DICE_ANEMO", "count": 3 }]
   # 苦舎桓
   - id: 323008
     rawDescription: |
