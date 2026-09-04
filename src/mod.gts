@@ -219,7 +219,7 @@ define skill {
   }
 };
 
-const DisposedSupportCountExtension = 322022 as ExtensionHandle<{
+const DisposedSupportCountExtension = (50_000_000 + 322022) as ExtensionHandle<{
   disposedSupportCount: [number, number];
 }>;
 
