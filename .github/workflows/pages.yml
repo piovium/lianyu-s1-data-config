@@ -37,7 +37,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Generate CustomDataLoader declarations
-        run: pnpm setup
+        run: pnpm run setup
 
       - name: Check and build config
         run: pnpm check && pnpm build
