@@ -1,3 +1,4 @@
 [submodule "genius-invokation"]
 	path = genius-invokation
 	url = https://github.com/piovium/genius-invokation.git
+	branch = gi-7.1
